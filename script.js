@@ -1,4 +1,4 @@
-//Exectcute the code on window load.
+//Execute the code on window load.
 window.addEventListener('load', ()=> {
     //Declaring our variables to use later in our code.
     let long;
@@ -17,12 +17,12 @@ window.addEventListener('load', ()=> {
     //Create a popup to ask user to share location, if they accept execute the code inside this statement.
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(position => {
-            //Gettin the latitude and logitude from the users location to use in our api fetch.
+            //Getting the latitude and longitude from the users location to use in our api fetch.
             long = position.coords.longitude;
             lat = position.coords.latitude;
             //Fetch the data from Open weather map api.
             const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=c3d5c044f3d4e0650e99df20990439a1&units=metric`;
-            //Calling our fetch function using ther api variable created above.
+            //Calling our fetch function using the api variable created above.
             fetchApi(api);
         });
     }
@@ -39,7 +39,7 @@ window.addEventListener('load', ()=> {
                 return response.json();
             })
             .then(data =>{
-                //Set the data as variables that wont chage, {} have been used with const to declare multiple vars on 1 line.s
+                //Set the data as variables that wont be reassigned, {} have been used with const to declare multiple vars on 1 line.s
                 const {main, icon} = data.weather[0];
                 const {speed} = data.wind;
                 const {feels_like, humidity, temp} = data.main;
@@ -93,7 +93,7 @@ window.addEventListener('load', ()=> {
         }
     });
 
-    //This function will check the temperature returened and add a class to the body to change the background color.
+    //This function will check the temperature returned and add a class to the body to change the background color.
     function tempColor() {
         if ( temperature.textContent >= 10 && temperature.textContent <= 20) {
             body.className = '';
