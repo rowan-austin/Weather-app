@@ -57,6 +57,7 @@ body.night {
     display: flex;
     text-align: center;
     width: 100%;
+    margin-bottom: 50px;
 }
 .city-search {
     height: 75px;
@@ -99,6 +100,7 @@ body.night .city-search::placeholder {
 .location-information {
     text-align: center;
     width: 100%;
+    margin-bottom: 25px;
 }
 
 /* Weather Styling */
@@ -112,6 +114,9 @@ body.night .city-search::placeholder {
     margin-bottom: 7.5px;
 }
 
+.weather-information div {
+    width: 33.3%;
+}
 .temp-span {
     font-size: 2em;
 }
