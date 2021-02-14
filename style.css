@@ -1,0 +1,138 @@
+/* Global Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 3.2em;
+    font-weight: 600;
+    margin-bottom: 12.5px
+}
+h2 {
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 7.5px;
+    display: inline-block;
+}
+h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+span {
+    display: inline-block;
+}
+
+p {
+    display: inline-block;
+}
+
+body {
+    height: 100%;
+    padding: 10vw 15vw;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    color: #000;
+    background: linear-gradient(0deg, rgba(26,231,240,1) 0%, rgba(228,232,231,1) 100%);
+}
+body.medium {
+    background: linear-gradient(0deg, rgba(156,240,26,1) 0%, rgba(123,234,252,1) 100%);
+}
+body.hot {
+    background: linear-gradient(0deg, rgba(240,234,26,1) 0%, rgba(244,160,34,1) 100%);
+}
+body.night {
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(92,90,90,1) 100%);
+    color: #fff;
+}
+
+/* Search Styling */
+.search {
+    display: flex;
+    text-align: center;
+    width: 100%;
+}
+.city-search {
+    height: 75px;
+    width: 80%;
+    border: none;
+    border-bottom: 4px solid #000;
+    font-size: 32px;
+    background-color: transparent;
+    color: #000;
+    z-index: 2;
+}
+.city-search::placeholder {
+    font-size: 24px;
+}
+.search-button {
+    height: 75px;
+    width: 20%;
+    border: none;
+    background-color: transparent;
+    color: #000;
+    font-size: 32px;
+    font-weight: bold;
+    z-index: 2;
+}
+.search-button:hover {
+    cursor: pointer;
+}
+body.night .search-button {
+    color:#fff;
+}
+body.night .city-search {
+    color:#fff; 
+    border-bottom: 4px solid #fff;
+}
+body.night .city-search::placeholder {
+    color: #fff;
+}
+
+/* Location Styling */
+.location-information {
+    text-align: center;
+    width: 100%;
+}
+
+/* Weather Styling */
+.weather-information {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.weather-information h3 {
+    margin-bottom: 7.5px;
+}
+
+.temp-span {
+    font-size: 2em;
+}
+
+/* Media Queries*/
+@media (min-width: 200px) and (max-width: 800px) {
+    .search {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .city-search {
+        width: 100%;
+    }
+    .search-button {
+        width: 100%;
+    }
+    .weather-information {
+        flex-wrap: wrap;
+    }
+    .weather-information div {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+}

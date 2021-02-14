@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width-device-width, inital-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <link rel="stylesheet" href="./style.css"/>
+        <title>Weather</title>
+    </head>
+    <body>
+        <div class="weather-icon">
+            <canvas id="icon" width="128" height="128"></canvas>
+        </div>
+
+        <div class="search">
+            <input type="text" class="city-search" value="Search for a city" aria-label="Search">
+            <input type="submit" value="Search" class="search-button" aria-label="Submit">
+        </div>
+        <div class="location-information">
+            <h1 class="location"></h1>
+            <h2 class="temperature"></h2><span class="temp-span">°C</span>
+            <div><p class="weather-description"></p></div>
+        </div>
+        <div class="weather-information">
+            <div><h3>Wind Speed</h3><p class="wind-speed"></p><span>mph</span></div>
+            <div><h3>Feels Like</h3><p class="feels-like"></p><span>°C</span></div>
+            <div><h3>Humidity</h3><p class="humidity"></p><span>%</span></div>
+        </div>
+        <script src="script.js"></script>
+        <script src="skycons.js"></script>
+    </body>
+</html>
