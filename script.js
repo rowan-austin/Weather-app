@@ -116,36 +116,50 @@ window.addEventListener('load', ()=> {
     //Within this function we run a check to see what icon code is given back to us from the api.
     function getIcon(icon) {
         let skycons = new Skycons({color: "black"});
-        if (icon === "01d") {
-            //Once we have found the right icon we set it in the HTML to change the icon as the weather changes.
-            skycons.set("icon", "clear-day");
-            //Here I am setting an alt text attribute on the icon element for accessibility.
-            weathericon.setAttribute("alt","clear");
-        } else if (icon === "01n") {
-            skycons.set("icon", "clear-night");
-            weathericon.setAttribute("alt","clear");
-        } else if (icon === "02d") {
-            skycons.set("icon", "partly-cloudy-day");
-            weathericon.setAttribute("alt","cloudy");
-        } else if (icon === "02n") {
-            skycons.set("icon", "partly-cloudy-night");
-            weathericon.setAttribute("alt","cloudy");
-        } else if (icon === "03d" || icon === "03n" || icon === "04d" || icon === "04n") {
-            skycons.set("icon", "cloudy");
-            weathericon.setAttribute("alt","cloudy");
-        } else if (icon === "09d" || icon === "09n") {
-            skycons.set("icon", "rain");
-            weathericon.setAttribute("alt","rain");
-        } else if (icon === "10d" || icon === "10n" || icon === "11d" || icon === "11n") {
-            skycons.set("icon", "sleet");
-            weathericon.setAttribute("alt","sleet");
-        } else if (icon === "13d" || icon === "13n") {
-            skycons.set("icon", "snow");
-            weathericon.setAttribute("alt","snow");
-        } else {
-            skycons.set("icon", "fog");
-            weathericon.setAttribute("alt","fog");
-        };
+        //I have used a switch statement for inproved readability rather than an if else statement utilising ||.
+        switch(icon) {
+            case "01d":
+                //Once we have found the right icon we set it in the HTML to change the icon as the weather changes.
+                skycons.set("icon", "clear-day");
+                //Here I am setting an alt text attribute on the icon element for accessibility.
+                weathericon.setAttribute("alt","clear");
+                break;
+            case "02d":
+                skycons.set("icon", "partly-cloudy-day");
+                weathericon.setAttribute("alt","cloudy");
+                break;
+            case "02n":
+                skycons.set("icon", "partly-cloudy-night");
+                weathericon.setAttribute("alt","cloudy");
+                break;
+            case "03d": 
+            case "03n": 
+            case "04d": 
+            case "04n":            
+                skycons.set("icon", "cloudy");
+                weathericon.setAttribute("alt","cloudy");
+                break;
+            case "09d": 
+            case "09n":
+                skycons.set("icon", "rain");
+                weathericon.setAttribute("alt","rain");
+                break;
+            case "10d": 
+            case "10n": 
+            case "11d": 
+            case "11n":
+                skycons.set("icon", "sleet");
+                weathericon.setAttribute("alt","sleet");
+                break;
+            case "13d": 
+            case "13n":
+                skycons.set("icon", "snow");
+                weathericon.setAttribute("alt","snow");
+                break;
+            default:
+                skycons.set("icon", "fog");
+                weathericon.setAttribute("alt","fog");    
+        }
         //Running out icon animation.
         skycons.play();
     }
