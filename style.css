@@ -71,6 +71,7 @@ body.night {
 }
 .city-search::placeholder {
     font-size: 24px;
+    color: #000;
 }
 .search-button {
     height: 75px;
